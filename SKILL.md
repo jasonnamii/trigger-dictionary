@@ -1,24 +1,17 @@
 ---
 name: trigger-dictionary
-description: |
-  25개 사고도구 프로토콜 사전. 대화에서 도구명 등장시 반드시 이 스킬을 호출하여 정의된 프로토콜대로 실행.
-  P1: 트리거, 트리거사전, 사고도구, 홈즈, 오컴, 제1원리, 베이지안, 백본, 엘베피치, 프리모르템, 트리아지, 제출청소, 이쁘니.
-  P2: 홈즈로 분석, 백본 잡아, 트리아지 해봐, 제출청소 해줘, 이쁘니 해줘.
-  P3: trigger dictionary, thinking tools, protocol execution.
-  P5: 프로토콜실행으로.
-  NOT: 모순기술·TRIZ(→triz), 기획안(→ceo-pipeline/policy-planning).
+description: "25개 사고도구 프로토콜 사전. 대화에서 도구명 등장시 반드시 이 스킬을 호출하여 정의된 프로토콜대로 실행.\nP1: 트리거, 트리거사전, 사고도구, 홈즈, 오컴, 제1원리, 베이지안, 백본, 엘베피치, 프리모르템, 트리아지, 제출청소, 이쁘니.\nP2: 홈즈로 분석, 백본 잡아, 트리아지 해봐, 제출청소 해줘, 이쁘니 해줘.\nP3: trigger dictionary, thinking tools, protocol execution.\nP5: 프로토콜실행으로.\nNOT: 모순기술·TRIZ(→triz), 기획안(→ceo-pipeline/policy-planning)."
 # @uses 제거됨 — spoke는 라우팅 테이블에 따라 필요시만 Read로 로드
-# references/radar.md, protocol-cleanup.md, protocol-pretty.md, protocol-designer.md, protocol-edit4.md
+# references/protocol-cleanup.md, protocol-pretty.md, protocol-designer.md, protocol-edit4.md
 ---
 
 
-# 트리거 사전 — 25개 사고도구 + 트리거 레이더
+# 트리거 사전 — 25개 사고도구
 
 ## 라우팅
 
 | 호출 | 로드 대상 |
 |------|-----------|
-| 레이더·트리거추천·트리거제안·콤보 | → `references/radar.md` |
 | 제출청소 | → `references/protocol-cleanup.md` |
 | 이쁘니 | → `references/protocol-pretty.md` |
 | 작업설계자 | → `references/protocol-designer.md` |
@@ -26,7 +19,7 @@ description: |
 | 모순기술·TRIZ·트리즈 | → **triz 스킬로 이관됨** (이 스킬에서 처리하지 않음) |
 | 개별 트리거 25종 | → 아래 §1 정의 테이블로 즉시 실행 |
 
-**필요한 spoke만 로드한다.** 제출청소 호출 시 radar.md를 로드할 필요 없고, 홈즈 호출 시 protocol-edit4.md를 로드할 필요 없다.
+**필요한 spoke만 로드한다.** 제출청소 호출 시 protocol-pretty.md를 로드할 필요 없고, 홈즈 호출 시 protocol-edit4.md를 로드할 필요 없다.
 
 ---
 
@@ -59,7 +52,7 @@ description: |
 | 관점 | 절대자 | 형이 제시한 프레임 고정→해당 프레임 내 빠진부분 전수탐색→MECE정리. 프레임 자체를 바꾸거나 새 프레임 제시 금지(형 요청시만) |
 | 전환 | 부작업 | "부작업 할게" 호출→현재 주작업 스냅샷 저장(목표·진행상태·다음단계)→TodoList에 주작업 상태 보존→부작업 모드 진입. 부작업 완료시 자동으로 "주작업 복귀 가능" 안내 |
 | 전환 | 주작업 | "주작업" 호출→저장된 스냅샷 복원→TodoList에서 주작업 상태 로드→중단지점부터 이어서 실행. 스냅샷 없으면 "저장된 주작업 없음" 안내 |
-| 실행 | 제출청소 | 외부제출용 문서 정제. **상세 → `references/protocol-cleanup.md`** |
+| 실행 | 제출청소 | 외부제출용 문서 정제. **상세 → `references/protocol-cleanup.md`** — 반드시 13행 고정 테이블(`| # | 축 | 결과 | grep 건수 | 오탐 제외 | 실건수 |`) 출력. 0건 축도 "✅ 0건"으로 전 행 표시 필수. protocol-cleanup.md의 축별 grep 패턴을 정확히 실행할 것 |
 | 실행 | 이쁘니 | 콘텐츠불변·순수마크다운문법만으로 강약·가독성 극대화. **상세 → `references/protocol-pretty.md`** |
 | 실행 | 작업설계자 | 대화맥락→7단계 구조화→승인대기. **상세 → `references/protocol-designer.md`** |
 
@@ -81,3 +74,4 @@ description: |
 - **수정4 레벨 과소판정:** 에이전트가 L3를 L2로, L4를 L3으로 판정해 게이트를 우회하는 패턴. escalate-up default를 반드시 적용 — 애매하면 상위 레벨.
 - **POST_VERIFY 생략:** "간단한 수정이니 검증 불필요"라고 판단하는 패턴. L1이라도 grep 잔존검색은 필수. 검증 없는 수정 = FAIL.
 - **이쁘니 직접수행:** "마크다운 정리 정도는 직접 하면 된다"고 판단하는 패턴. 이쁘니는 L1~L5 강약매핑+볼드 과용 체크+diff QC를 포함하는 5단계 프로토콜. protocol-pretty.md 로드 없이 직접 수행 시 파이프라인 누락 = FAIL.
+- **제출청소 축3 미탐:** 축3(내부언어)의 최빈 미탐은 내부 작업 프로세스 용어(Phase N, 대조판정, N건 수정, 독립 리서치 등). 판별 기준: "이 문장이 내부 작업 과정을 아는 사람만 이해할 수 있는가?" Yes→실건수 포함. 축13(숫자정합)은 금액·환율 존재 시 Python 검증 필수(0건 판정 금지). Before/After는 반드시 위치·Before·After 3열 테이블로 출력.
