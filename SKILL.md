@@ -1,6 +1,12 @@
 ---
 name: trigger-dictionary
-description: "25개 사고도구 프로토콜 사전. 대화에서 도구명 등장시 반드시 이 스킬을 호출하여 정의된 프로토콜대로 실행. 직접 수행 금지.\nP1: 트리거, 트리거사전, 사고도구, 주작업, 부작업, 레이더, 트리거레이더, 트리거추천, 작업설계자, 수정4, 수정레벨, 홈즈, 오컴, 제1원리, 베이지안, 엄브렐러, 아날로지, 연역수렴, 외과적, 백본, 스켈레톤, SHE, 엘베피치, 타임스톤, 맥가이버, 넛지, 프리모르템, 트리아지, 줌, 절대자, 제출청소, 이쁘니, 미궁, 마비, 시야, 벽, 카드없음, 장밋빛폭주, 제출직전.\nP2: 홈즈로 분석, 백본 잡아, 트리아지 해봐, 제1원리로, 프리모르템 돌려, 엘베피치로, 제출청소 해줘, 이쁘니 해줘, 부작업 할게, 주작업 복귀.\nNOT: 모순기술·TRIZ(→triz 스킬), 기획안(→ceo-pipeline/policy-planning)"
+description: |
+  25개 사고도구 프로토콜 사전. 대화에서 도구명 등장시 반드시 이 스킬을 호출하여 정의된 프로토콜대로 실행.
+  P1: 트리거, 트리거사전, 사고도구, 홈즈, 오컴, 제1원리, 베이지안, 백본, 엘베피치, 프리모르템, 트리아지, 제출청소, 이쁘니.
+  P2: 홈즈로 분석, 백본 잡아, 트리아지 해봐, 제출청소 해줘, 이쁘니 해줘.
+  P3: trigger dictionary, thinking tools, protocol execution.
+  P5: 프로토콜실행으로.
+  NOT: 모순기술·TRIZ(→triz), 기획안(→ceo-pipeline/policy-planning).
 # @uses 제거됨 — spoke는 라우팅 테이블에 따라 필요시만 Read로 로드
 # references/radar.md, protocol-cleanup.md, protocol-pretty.md, protocol-designer.md, protocol-edit4.md
 ---
@@ -55,9 +61,6 @@ description: "25개 사고도구 프로토콜 사전. 대화에서 도구명 등
 | 전환 | 주작업 | "주작업" 호출→저장된 스냅샷 복원→TodoList에서 주작업 상태 로드→중단지점부터 이어서 실행. 스냅샷 없으면 "저장된 주작업 없음" 안내 |
 | 실행 | 제출청소 | 외부제출용 문서 정제. **상세 → `references/protocol-cleanup.md`** |
 | 실행 | 이쁘니 | 콘텐츠불변·순수마크다운문법만으로 강약·가독성 극대화. **상세 → `references/protocol-pretty.md`** |
-
-<!-- 🥚 25개 사고도구를 만들고 나서 가장 먼저 쓴 건 "마비" 트리거였다. — N.C. -->
-
 | 실행 | 작업설계자 | 대화맥락→7단계 구조화→승인대기. **상세 → `references/protocol-designer.md`** |
 
 ### 1-1. Python 자동 스캐너 (`scripts/trigger_scanner.py`)
