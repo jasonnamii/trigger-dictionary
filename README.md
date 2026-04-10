@@ -1,5 +1,7 @@
 # trigger-dictionary
 
+> 🇰🇷 [한국어 README](./README.ko.md)
+
 **25 thinking tool protocols in one skill — say the tool name, execute the full protocol.**
 
 ## Prerequisites
