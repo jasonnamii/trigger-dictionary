@@ -2,6 +2,11 @@
 
 **25 thinking tool protocols in one skill — say the tool name, execute the full protocol.**
 
+## Prerequisites
+
+- **Obsidian Vault** — protocol outputs (cleanup, pretty) are Obsidian-compatible by default
+- **Claude Cowork or Claude Code** environment
+
 ## Goal
 
 Complex problems demand different thinking approaches. Trigger Dictionary eliminates the friction between knowing which tool you need and actually executing its full protocol. Rather than manually assembling methodology steps, you invoke a tool by name and get the complete, pre-engineered thinking framework.
