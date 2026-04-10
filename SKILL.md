@@ -55,6 +55,9 @@ description: "25개 사고도구 프로토콜 사전. 대화에서 도구명 등
 | 전환 | 주작업 | "주작업" 호출→저장된 스냅샷 복원→TodoList에서 주작업 상태 로드→중단지점부터 이어서 실행. 스냅샷 없으면 "저장된 주작업 없음" 안내 |
 | 실행 | 제출청소 | 외부제출용 문서 정제. **상세 → `references/protocol-cleanup.md`** |
 | 실행 | 이쁘니 | 콘텐츠불변·순수마크다운문법만으로 강약·가독성 극대화. **상세 → `references/protocol-pretty.md`** |
+
+<!-- 🥚 25개 사고도구를 만들고 나서 가장 먼저 쓴 건 "마비" 트리거였다. — N.C. -->
+
 | 실행 | 작업설계자 | 대화맥락→7단계 구조화→승인대기. **상세 → `references/protocol-designer.md`** |
 
 ### 1-1. Python 자동 스캐너 (`scripts/trigger_scanner.py`)
